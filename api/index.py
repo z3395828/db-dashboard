@@ -24,7 +24,7 @@ def query_cockroachdb(sql):
     conn.close()
     return cols, rows
 
-TURSO_TOKEN=os.env...N", "")
+TURSO_TOKEN=os.environ.get("TURSO_TOKEN", "")
 TURSO_URL = os.environ.get("TURSO_URL", "https://zhangbowenmain-zhangbowen.aws-ap-south-1.turso.io/v2/pipeline")
 
 def query_turso(sql):
