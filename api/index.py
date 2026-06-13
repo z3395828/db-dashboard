@@ -345,8 +345,8 @@ function sortBy(col){
 
 function exportCSV(){
   if(!currentData.rows.length){showToast('没有数据可导出','error');return;}
-  let csv=currentData.columns.join(',')+'\n';
-  currentData.rows.forEach(r=>{csv+=r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')+'\n';});
+  let csv=currentData.columns.join(',')+'\\n';
+  currentData.rows.forEach(r=>{csv+=r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')+'\\n';});
   const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
